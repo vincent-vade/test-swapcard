@@ -16,11 +16,13 @@ const Result = ({ artists }) => {
               <ListItem
                 disabled={true}
                 leftAvatar={
-                  <Avatar src={ artist.images.length > 0 ? artist.images[1].url : 'http://via.placeholder.com/300x300'} />
+                  <Avatar src={ artist.images.length > 0
+                    ? artist.images[1].url
+                    : 'http://via.placeholder.com/300x300'} />
                 }
               >
                 {artist.name}
-                <Link to={`/artists/${artist.id}`}>voir +</Link>
+                <Link to={`/artists/${artist.id}`} className="artist--link">voir +</Link>
               </ListItem>
           </div>
           )

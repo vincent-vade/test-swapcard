@@ -9,3 +9,10 @@
   margin-bottom: 20px;
   background: white;
 }
+
+.artist--link {
+  float: right;
+  text-decoration: none;
+  color: #4e4376;
+  font-weight: 900;
+}

@@ -16,7 +16,6 @@ class SearchBar extends Component {
   }
 
   render() {
-    console.log(this.props.result)
     return (
       <div>
         <div className="search">

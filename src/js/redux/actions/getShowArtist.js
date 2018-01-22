@@ -3,8 +3,8 @@ import {
   GET_ARTIST_SUCCESS,
   GET_ARTIST_REQUEST
 } from '../constantes'
-
 import apiHandler from '../../config/apiHandler'
+import { ALBUM } from '../../config/constantes/url'
 
 const getArtistRequest = () => {
   return {
@@ -30,11 +30,8 @@ const getShowArtist = (artistId) => {
   return (dispatch) => {
     dispatch(getArtistRequest())
     return apiHandler()
-      .get(`/artists/${artistId}/albums`)
-      .then((response) => {
-        console.log(getArtistSuccess(response.data))
-        dispatch(getArtistSuccess(response.data))
-      })
+      .get(ALBUM(artistId))
+      .then(response => dispatch(getArtistSuccess(response.data)))
       .catch(error => dispatch(getArtistError(error))
     );
   };

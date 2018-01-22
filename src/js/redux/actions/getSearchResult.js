@@ -4,6 +4,7 @@ import {
   GET_SEARCH_RESULT_ERROR
 } from '../constantes'
 import apiHandler from '../../config/apiHandler'
+import { SEARCH } from '../../config/constantes/url'
 
 const getSearchResultRequest = () => {
   return {
@@ -29,13 +30,9 @@ const getSearchResult = (q) => {
   return (dispatch) => {
     dispatch(getSearchResultRequest())
     return apiHandler()
-      .get(`/search`, { params: { q, type: 'artist', limit: 10 }})
-      .then((response) => {
-        dispatch(getSearchResultSuccess(response.data))
-      })
-      .catch((error) => {
-        dispatch(getSearchResultError(error))
-      });
+      .get(SEARCH, { params: { q, type: 'artist', limit: 10 }})
+      .then(response => dispatch(getSearchResultSuccess(response.data)))
+      .catch((error) => dispatch(getSearchResultError(error)))
   };
 };
 

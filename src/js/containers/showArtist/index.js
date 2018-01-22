@@ -3,9 +3,8 @@ import ShowArtist from '../../components/ShowArtist'
 import getShowArtist from '../../redux/actions/getShowArtist';
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
-    detailArtist: state.detailArtist
+    artist: state.detailArtist.artist
   };
 };
 
