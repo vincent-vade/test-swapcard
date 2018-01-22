@@ -1,0 +1,11 @@
+.artists {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+}
+
+.artist--item {
+  margin-bottom: 20px;
+  background: white;
+}
